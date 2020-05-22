@@ -12,14 +12,17 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { LoginComponent } from "./modules/login/login.component";
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+
+import { Modules } from "./modules/index";
 
 registerLocaleData(zh);
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    Modules
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,9 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule,
     NzFormModule,
-    NzButtonModule
+    NzButtonModule,
+    NzIconModule,
+    NzLayoutModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
