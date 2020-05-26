@@ -1,0 +1,27 @@
+.m-loagin-box{
+    width: 320px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-top: 10%;
+    background: #fafeff;
+    z-index: 10;
+}
+
+video{
+    position: absolute;
+}
+.login-form {
+    max-width: 300px;
+  }
+
+  .login-form-margin {
+    margin-bottom: 16px;
+  }
+
+  .login-form-forgot {
+    float: right;
+  }
+
+  .login-form-button {
+    width: 100%;
+  }

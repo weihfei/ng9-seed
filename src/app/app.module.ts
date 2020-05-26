@@ -14,8 +14,13 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 import { Modules } from "./modules/index";
+import { IndexModule } from "./modules/index/index.module";
 
 registerLocaleData(zh);
 
@@ -26,6 +31,7 @@ registerLocaleData(zh);
   ],
   imports: [
     BrowserModule,
+    IndexModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -34,7 +40,11 @@ registerLocaleData(zh);
     NzFormModule,
     NzButtonModule,
     NzIconModule,
-    NzLayoutModule
+    NzLayoutModule,
+    NzInputModule,
+    NzCheckboxModule,
+    NzBreadCrumbModule,
+    NzPageHeaderModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
