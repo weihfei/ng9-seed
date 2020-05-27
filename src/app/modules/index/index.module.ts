@@ -7,9 +7,17 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzHighlightModule } from 'ng-zorro-antd/core/highlight';
 
 import { IndexRoutingModule } from "./index-routing.modeule";
 import { IndexComponents } from "./index";
+import { IndexServices } from "./services/index";
+
+import { NzHighlightComponent } from "../../shares/components/heightlight/heightlight";
 
 @NgModule({
   imports: [
@@ -20,9 +28,15 @@ import { IndexComponents } from "./index";
     NzPageHeaderModule,
     NzIconModule,
     NzButtonModule,
-    NzMenuModule
+    NzMenuModule,
+    NzAvatarModule,
+    NzBadgeModule,
+    NzMessageModule,
+    NzDropDownModule,
+    NzHighlightModule,
   ],
-  declarations: [IndexComponent,IndexComponents]
+  declarations: [IndexComponent,IndexComponents, NzHighlightComponent],
+  providers: [IndexServices]
 })
 
 export class IndexModule { }

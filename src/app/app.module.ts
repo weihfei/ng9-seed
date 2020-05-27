@@ -18,6 +18,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzHighlightModule } from 'ng-zorro-antd/core/highlight';
 
 import { Modules } from "./modules/index";
 import { IndexModule } from "./modules/index/index.module";
@@ -44,7 +45,8 @@ registerLocaleData(zh);
     NzInputModule,
     NzCheckboxModule,
     NzBreadCrumbModule,
-    NzPageHeaderModule
+    NzPageHeaderModule,
+    NzHighlightModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

@@ -25,10 +25,24 @@
     <nz-header>
       <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i>
       <div class="top-header-box">
-         <div>3232</div>
-         <div>3232</div>
-         <div>3232</div>
+        <div class="top-header-item">
+          <nz-badge [nzCount]="5" [nzOffset]="[0,-2]">
+            <i nz-icon nzType="bell" nzTheme="outline" style="font-size: 16px;"></i>
+          </nz-badge>
+        </div>
+        <div class="top-header-item" nz-dropdown [nzDropdownMenu]="userInfoMenu">
+          <nz-avatar nzIcon="user" [nzShape]="'square'" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" class="m-headImg"></nz-avatar>
+          <span>Hi,{{userInfo.userName}}</span>
 
+          <nz-dropdown-menu #userInfoMenu="nzDropdownMenu">
+            <ul nz-menu nzSelectable>
+              <li nz-menu-item><i nz-icon nzType="user" nzTheme="outline"></i> <span class="font-size-small">个人中心</span></li>
+              <li nz-menu-item>2nd menu item</li>
+              <li nz-menu-item>3rd menu item</li>
+            </ul>
+          </nz-dropdown-menu>
+        </div>
+      
       </div>
     </nz-header>
     <nz-content>
@@ -37,7 +51,7 @@
         <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
       </nz-breadcrumb>
       <div class="inner-content">
-        Bill is a cat.
+        <nz-highlight [nzCode]="code"></nz-highlight>
       </div>
     </nz-content>
     <nz-footer> ©2020 ng-seed by HeFei Wei</nz-footer>

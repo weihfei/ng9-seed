@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
 
     // 登录成功，跳转到首页
     if(this.validateForm.valid) {
-      this.router.navigate(['index']);
+      let userInfo = {'userName':this.validateForm.value.userName}; // 保存用户信息
+      localStorage.setItem('userInfo',JSON.stringify(userInfo)); // 将用户信息存入localstroage
+      this.router.navigate(['index']); // 跳转到主页
     }
   }
 
