@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { NzMessageService } from 'ng-zorro-antd';
 import { UserInfo } from "./services/index.service";
+
+import hljs from 'highlight.js';
+
 
 
 @Component({
@@ -9,13 +12,13 @@ import { UserInfo } from "./services/index.service";
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss']
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent implements OnInit, AfterViewInit {
 
   isCollapsed = false;
   userInfo:UserInfo; // 保存用户信息
 
   code:string = `
-  let aa:string = '123';
+   <div><i class="icon"></i></div>
   `
 
   // 获取用户信息
@@ -36,7 +39,14 @@ export class IndexComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.getUserInfo(); // 获取用户信息
+    this.code = hljs.highlightAuto(this.code).value;
+    hljs.initHighlightingOnLoad();
+  }
+
+  ngAfterViewInit() {
+    
   }
 
 }

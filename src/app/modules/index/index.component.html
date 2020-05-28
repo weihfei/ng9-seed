@@ -1,3 +1,4 @@
+
 <nz-layout style="height: 100%;">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
     <div class="logo"></div>
@@ -51,7 +52,8 @@
         <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
       </nz-breadcrumb>
       <div class="inner-content">
-        <nz-highlight [nzCode]="code"></nz-highlight>
+        <!-- <nz-highlight [nzCode]="code"></nz-highlight> -->
+        <pre><code [innerHTML]="code" class="html"></code></pre>
       </div>
     </nz-content>
     <nz-footer> ©2020 ng-seed by HeFei Wei</nz-footer>

@@ -21,8 +21,8 @@ export class NzHighlightComponent implements OnInit {
   }
 
   set nzCode(value: string | SafeHtml) {
-    this.code = this.sanitizer.bypassSecurityTrustHtml(value as string);
-    this.code = hljs.highlight(this.code).value;
+    // this.code = this.sanitizer.bypassSecurityTrustHtml(value as string);
+    this.code = hljs.highlightAuto(value).value;
   }
 
   constructor(private sanitizer: DomSanitizer) {}
