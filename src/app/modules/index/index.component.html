@@ -52,8 +52,12 @@
         <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
       </nz-breadcrumb>
       <div class="inner-content">
-        <!-- <nz-highlight [nzCode]="code"></nz-highlight> -->
-        <pre><code [innerHTML]="code" class="html"></code></pre>
+
+        <div><button (click)="showCodeFn()">{{showCode?'隐藏':'显示'}}</button></div>
+        
+        <nz-highlight [nzCode]="code" nzLanguage="html"></nz-highlight>
+        
+        
       </div>
     </nz-content>
     <nz-footer> ©2020 ng-seed by HeFei Wei</nz-footer>

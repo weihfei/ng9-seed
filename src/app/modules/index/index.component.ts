@@ -3,7 +3,6 @@ import { Router } from "@angular/router";
 import { NzMessageService } from 'ng-zorro-antd';
 import { UserInfo } from "./services/index.service";
 
-import hljs from 'highlight.js';
 
 
 
@@ -16,6 +15,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
   isCollapsed = false;
   userInfo:UserInfo; // 保存用户信息
+  showCode:boolean = false;
 
   code:string = `
    <div><i class="icon"></i></div>
@@ -33,6 +33,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
      }
   }
 
+  showCodeFn():void {
+    this.showCode = !this.showCode;
+  }
+
   constructor(
     private router: Router,
     private nzMessageService: NzMessageService
@@ -41,8 +45,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 
     this.getUserInfo(); // 获取用户信息
-    this.code = hljs.highlightAuto(this.code).value;
-    hljs.initHighlightingOnLoad();
   }
 
   ngAfterViewInit() {

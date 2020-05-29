@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import hljs from 'highlight.js/lib/core';
+import hljs from 'highlight.js';
 
 @Component({
   selector: 'nz-highlight',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <pre class="language-angular"><code [innerHTML]="code" class="language-typescript"></code></pre>
+    <pre class="language-angular"><code [innerHTML]="code" [ngClass]="{nzLanguage:true}"></code></pre>
   `
 })
 export class NzHighlightComponent implements OnInit {
@@ -22,6 +22,7 @@ export class NzHighlightComponent implements OnInit {
 
   set nzCode(value: string | SafeHtml) {
     // this.code = this.sanitizer.bypassSecurityTrustHtml(value as string);
+    hljs.initHighlightingOnLoad();
     this.code = hljs.highlightAuto(value).value;
   }
 
