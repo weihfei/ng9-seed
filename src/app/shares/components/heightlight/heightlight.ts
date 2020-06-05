@@ -1,8 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import hljs from 'highlight.js';
-
 @Component({
   selector: 'nz-highlight',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,9 +19,7 @@ export class NzHighlightComponent implements OnInit {
   }
 
   set nzCode(value: string | SafeHtml) {
-    // this.code = this.sanitizer.bypassSecurityTrustHtml(value as string);
-    hljs.initHighlightingOnLoad();
-    this.code = hljs.highlightAuto(value).value;
+    this.code = this.sanitizer.bypassSecurityTrustHtml(value as string);
   }
 
   constructor(private sanitizer: DomSanitizer) {}

@@ -12,6 +12,7 @@ import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzHighlightModule } from 'ng-zorro-antd/core/highlight';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { IndexRoutingModule } from "./index-routing.modeule";
 import { IndexComponents } from "./index";
@@ -34,6 +35,7 @@ import { NzHighlightComponent } from "../../shares/components/heightlight/height
     NzMessageModule,
     NzDropDownModule,
     NzHighlightModule,
+    MarkdownModule.forChild()
   ],
   declarations: [IndexComponent,IndexComponents, NzHighlightComponent],
   providers: [IndexServices]

@@ -22,6 +22,7 @@ import { NzHighlightModule } from 'ng-zorro-antd/core/highlight';
 
 import { Modules } from "./modules/index";
 import { IndexModule } from "./modules/index/index.module";
+import { MarkdownModule } from 'ngx-markdown';
 
 registerLocaleData(zh);
 
@@ -47,6 +48,7 @@ registerLocaleData(zh);
     NzBreadCrumbModule,
     NzPageHeaderModule,
     NzHighlightModule,
+    MarkdownModule.forRoot()
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

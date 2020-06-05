@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { NzMessageService } from 'ng-zorro-antd';
 import { UserInfo } from "./services/index.service";
@@ -11,15 +11,13 @@ import { UserInfo } from "./services/index.service";
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss']
 })
-export class IndexComponent implements OnInit, AfterViewInit {
+export class IndexComponent implements OnInit {
 
   isCollapsed = false;
   userInfo:UserInfo; // 保存用户信息
   showCode:boolean = false;
 
-  code:string = `
-   <div><i class="icon"></i></div>
-  `
+  code:string = `let aa = fucntion() {console.log('Hello Wold')}`
 
   // 获取用户信息
   getUserInfo() {
@@ -47,8 +45,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
     this.getUserInfo(); // 获取用户信息
   }
 
-  ngAfterViewInit() {
-    
+  onError(e) {
+     throw e;
   }
 
 }
