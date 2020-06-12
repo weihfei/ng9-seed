@@ -134,6 +134,10 @@
               "devServerTarget": "ng9-seed:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
